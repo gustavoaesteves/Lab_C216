@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="br.inatel.labs.labrest.server.model.Curso"/>
+    <fullyQualifiedTypeName name="br.inatel.labs.labrest.server.service.CursoService"/>
+    <fullyQualifiedTypeName name="model.Curso"/>
+</qualifiedTypeNameHistroy>

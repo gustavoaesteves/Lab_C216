@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
@@ -77,7 +78,7 @@ class CursoControllerTest {
 			.uri("/curso/" + cursoIdValido)
 			.exchange()
 			.expectStatus()
-				.isAccepted()
+			.isAccepted()
 			.expectBody(Curso.class);
 	}
 
@@ -90,6 +91,23 @@ class CursoControllerTest {
                 .uri("/curso/" + cursoIdInvalido)
                 .exchange()
                 .expectStatus().isNotFound();
+    }
+    
+    @Test
+    void dadoCursoInvalido_quandoDeleteCurso_entaoRespondeComStatusNotFound(){
+        Long cursoIdInvalido= 16L;
+
+        webTestClient.create()
+                .delete()
+                .uri("/curso/15")
+                .retrieve
+                .toBodilessEntity()
+                .block();
+        
+        HttpStatus statusCode = responseEntity.getStatusCode()
+        		
+        System.out.println("Curso removido. Status da resposta: " + statusCode);
+                
     }
 
 }

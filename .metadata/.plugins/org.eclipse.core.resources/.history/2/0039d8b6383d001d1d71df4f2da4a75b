@@ -1,0 +1,15 @@
+package snippet;
+
+public class Snippet {
+	@Test
+	    void dadoCursoInvalido_quandoDeleteCurso_entaoRespondeComStatusNotFound(){
+	        Long cursoIdInvalido= 16L;
+	
+	        webTestClient
+	                .delete()
+	                .uri("/curso/" + cursoIdInvalido)
+	                .exchange()
+	                .expectStatus().isNotFound();
+	    }
+}
+
