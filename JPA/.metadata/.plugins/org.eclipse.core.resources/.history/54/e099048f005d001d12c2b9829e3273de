@@ -1,0 +1,8 @@
+package br.inatel.labs.labjpa.entity;
+
+public class Produto {
+	
+	private Long id;
+	private String descricao;
+	
+}
